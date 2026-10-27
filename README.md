@@ -21,11 +21,9 @@
 
 | Estado | ID | Tarea | Fecha de entrega | Evidencia (imagen/video) |
 |:------:|:--:|:------|:----------------:|:------------------------:|
-| ⬜ | **#996** | Realizar los ejercicios de Bandit en OverTheWire | 📅 09/10 |     
-
-|
-| ⬜ | **#993** | Hacer un menú en Bash | 📅 16/10 | 🎥 [Ver video](ruta/video993.mp4) |
+| ⬜ | **#996** | Realizar los ejercicios de Bandit en OverTheWire | 📅 09/10 | <img width="1839" height="991" alt="Screenshot 2026-10-27 174339" src="https://github.com/user-attachments/assets/1c866fb0-0d9b-4273-a816-3ce46e7af389" />|
+| ⬜ | **#993** | Hacer un menú en Bash | 📅 16/10 | https://github.com/user-attachments/assets/781d1e4c-9f24-4a3e-a06a-7c7c68da4d33 |
 | ⬜ | **#992** | Realizar los 18 bash scripts del PDF `shell_linux.pdf` | 📅 16/10 | ![Captura](ruta/imagen992.png) |
 | ⬜ | **#990** | Realizar una investigación de la unidad 1 | 📅 16/10 | 📄 [Ver documento](ruta/investigacion990.pdf) |
-| ⬜ | **#989** | Realizar el módulo *Linux Fundamentals* de TryHackMe | 📅 23/10 | ![Captura](ruta/imagen989.png) |
-| ⬜ | **#988** | Realizar el módulo *Windows Fundamentals* de TryHackMe | 📅 23/10 | ![Captura](ruta/imagen988.png) |
+| ⬜ | **#989** | Realizar el módulo *Linux Fundamentals* de TryHackMe | 📅 23/10 | <img width="1914" height="1007" alt="Screenshot 2026-10-27 174733" src="https://github.com/user-attachments/assets/8e7d154a-089f-4e6f-a476-2813ac161be9" />|
+| ⬜ | **#988** | Realizar el módulo *Windows Fundamentals* de TryHackMe | 📅 23/10 | <img width="1919" height="1022" alt="Screenshot 2026-10-27 174714" src="https://github.com/user-attachments/assets/a51f1eeb-88eb-4109-8b97-fc3feb32eef3" />|
