@@ -10,7 +10,7 @@
 | ⬜ | **#998** | Llevar una bitácora de clase | <img width="1862" height="929" alt="Screenshot 2026-10-27 173223" src="https://github.com/userattachments/assets/fb3dc88e-cef0-4d86-ad1f-7fb1346135fe" />|
 | ⬜ | **#997** | Práctica de comandos | 🎥 [Ver video](ruta/video997.mp4) |
 | ⬜ | **#995** | Realizar los niveles gratuitos de Vim Adventures | <img width="1919" height="1010" alt="Captura de pantalla 2026-09-14 072509" src="https://github.com/user-attachments/assets/ed31e31e-0654-4c20-89fc-52ed8e0acdce" />|
-| ⬜ | **#994** | Instalar VirtualBox y alguna distribución de Linux | <img width="1018" height="896" alt="Screenshot 2026-10-27 173551" src="https://github.com/user-attachments/assets/bc25d19e-e466-4a42-ace8-ca6fdd0c7e28" /> |
+| ⬜ | **#994** | Instalar VirtualBox y alguna distribución de Linux | <img width="1018" height="896" alt="Screenshot 2026-10-27 173551" src="https://github.com/user-attachments/assets/bc25d19e-e466-4a42-ace8-ca6fdd0c7e28" />|
 
 
 # 📘 Bitácora de GitHub - Parcial 2
