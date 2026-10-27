@@ -21,7 +21,9 @@
 
 | Estado | ID | Tarea | Fecha de entrega | Evidencia (imagen/video) |
 |:------:|:--:|:------|:----------------:|:------------------------:|
-| ⬜ | **#996** | Realizar los ejercicios de Bandit en OverTheWire | 📅 09/10 | ![Captura](ruta/imagen996.png) |
+| ⬜ | **#996** | Realizar los ejercicios de Bandit en OverTheWire | 📅 09/10 |     
+
+|
 | ⬜ | **#993** | Hacer un menú en Bash | 📅 16/10 | 🎥 [Ver video](ruta/video993.mp4) |
 | ⬜ | **#992** | Realizar los 18 bash scripts del PDF `shell_linux.pdf` | 📅 16/10 | ![Captura](ruta/imagen992.png) |
 | ⬜ | **#990** | Realizar una investigación de la unidad 1 | 📅 16/10 | 📄 [Ver documento](ruta/investigacion990.pdf) |
