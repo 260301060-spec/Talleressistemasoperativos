@@ -1,1 +1,197 @@
+Inicio
+ssh -p 2220 bandit0@bandit.labs.overthewire.org
+Contraseña: bandit0
+
+Nivel 0
+ls
+cat readme
+Siguiente contraseña: 6y2kwnwK6grgvwvpvLaa2T1cpFEKOhNR
+
+Nivel 1
+cat ./-
+Siguiente contraseña: PK8fYLZg2hnHSz83plBL1iEPKdD3QToB
+
+Nivel 2
+cat "spaces in this filename"
+Siguiente contraseña: 7ZZ2LFrykP2zEyvBl4m3clcL7tGYJPME
+
+Nivel 3
+cd inhere
+ls -a
+cat .hidden
+Siguiente contraseña: xzTXq1rDJQVVAzdv5cHq1TQytTWufAMq
+
+Nivel 4
+cd inhere
+file ./*
+cat ./-file07
+Siguiente contraseña: 6C7h9GD8M6ai5nr7wo1RonrzFjj9yIrG
+
+Nivel 5
+find . -type f -size 1033c ! -executable -exec cat {} \;
+Siguiente contraseña: pXa26xhMWaC2SvDotA4r9EgZkulOeSBW
+
+Nivel 6
+find / -type f -user bandit7 -group bandit6 -size 33c -exec cat {} \; 2>/dev/null
+Siguiente contraseña: Bmnnvf82KzQlfxgAI2d1zYbr1u9pr3E3
+
+Nivel 7
+grep millionth data.txt
+Siguiente contraseña: VR1ljMayciFxbnUokuQmJFw6QC9VKtub
+
+Nivel 8
+sort data.txt | uniq -u
+Siguiente contraseña: EjmOSvuAu7sGAHqHVcBDPirRe9T03kxl
+
+Nivel 9
+strings data.txt | grep "="
+Siguiente contraseña: B0s2khmbT9u0geKuOoVGW3JZKhndE3BG
+
+Nivel 10
+base64 -d data.txt
+Siguiente contraseña: pYfOY6HwUsDj5rL9UvyhU7MCmv8vN5Ro
+
+Nivel 11
+tr 'A-Za-z' 'N-ZA-Mn-za-m' < data.txt
+Siguiente contraseña: GROozWPO8QyN0mGrjUkID0WCYkZiQxrN
+
+Nivel 12
+mkdir /tmp/bandit12
+cp data.txt /tmp/bandit12
+cd /tmp/bandit12
+xxd -r data.txt > data
+file data
+mv data data.gz
+gzip -d data.gz
+file data
+bzip2 -d data.bz2
+tar -xf data.tar
+cat data8
+Siguiente contraseña: qQYQiHOBPR8zR61qxYqX45quvihF2uzk
+
+Nivel 13
+chmod 600 sshkey.private
+ssh -i sshkey.private bandit14@localhost
+Siguiente acceso: clave SSH
+
+Nivel 14
+cat /etc/bandit_pass/bandit14
+nc localhost 30000
+Siguiente contraseña: aaWecNkG4FhxJQxz07uiwzVP6bJiYS65
+
+Nivel 15
+openssl s_client -quiet -connect localhost:30001
+Siguiente contraseña: kS0Hf0u5HiXFwKMKFqXvPdOTNGGa0X8V
+
+Nivel 16
+nmap -sV -p 31000-32000 localhost
+openssl s_client -quiet -connect localhost:31790
+Siguiente acceso: clave SSH
+
+Nivel 17
+diff passwords.old passwords.new
+Siguiente contraseña: OQxXZjELndr90zuhOTDYBEomI0SZITXI
+
+Nivel 18
+ssh -p 2220 bandit18@bandit.labs.overthewire.org "cat readme"
+Siguiente contraseña: KpsOfPkcP7i1FlIExk2QEjyt6dw8dxZI
+
+Nivel 19
+./bandit20-do cat /etc/bandit_pass/bandit20
+Siguiente contraseña: 4pIjcunZ0fK2vmp3IwfG8Vf7VhxD6pOA
+
+Nivel 20
+nc -lvnp 12345
+./suconnect 12345
+Siguiente contraseña: bW9kBv5WC3P4yoDyf12LSdGuNz5ka6hY
+
+Nivel 21
+cat /etc/cron.d/cronjob_bandit22
+cat /usr/bin/cronjob_bandit22.sh
+cat /tmp/<archivo-indicado>
+Siguiente contraseña: RYVux2rHEm9tiXHmLFzuR7Vhx6AZQMEz
+
+Nivel 22
+cat /usr/bin/cronjob_bandit23.sh
+echo "I am user bandit23" | md5sum | cut -d ' ' -f1
+cat /tmp/<hash-obtenido>
+Siguiente contraseña: gKXDTAXnIz3OBxiPjRZ2uqutUlPZrBsw
+
+Nivel 23
+cd /tmp
+mkdir b23
+cd b23
+touch password
+chmod 666 password
+printf '#!/bin/sh\ncat /etc/bandit_pass/bandit24 > /tmp/b23/password\n' > script.sh
+chmod +x script.sh
+cp script.sh /var/spool/bandit24/foo
+sleep 70
+cat password
+Siguiente contraseña: hVQMk3lJNsmQ7VF3ubyrNNBom7BOgVXv
+
+Nivel 24
+for i in {0000..9999}; do printf 'hVQMk3lJNsmQ7VF3ubyrNNBom7BOgVXv %s\n' "$i"; done | nc localhost 30002 > resultado.txt
+grep -v "Wrong" resultado.txt
+Siguiente contraseña: SoHfqMOEqIX2IYKVciZxvgpR9a2Djx4P
+
+Nivel 25
+chmod 600 bandit26.sshkey
+ssh -i bandit26.sshkey bandit26@localhost
+Siguiente acceso: clave SSH
+
+Nivel 26
+v
+:set shell=/bin/bash
+:shell
+./bandit27-do cat /etc/bandit_pass/bandit27
+Siguiente contraseña: STJLJBRRphMxKB392CT4iOr5CbzPU9ER
+
+Nivel 27
+mkdir /tmp/b27
+cd /tmp/b27
+git clone ssh://bandit27-git@localhost/home/bandit27-git/repo
+cat repo/README
+Siguiente contraseña: y8Yd2ssKcpHpud7UvOSOxwamRMzIGIeQ
+
+Nivel 28
+git clone ssh://bandit28-git@localhost/home/bandit28-git/repo
+cd repo
+git log -p
+Siguiente contraseña: Em7eGtqaMySwNFjCpwzzHhLhospOcdt0
+
+Nivel 29
+git clone ssh://bandit29-git@localhost/home/bandit29-git/repo
+cd repo
+git branch -a
+git switch dev
+cat README.md
+Siguiente contraseña: jq9Dfg2rXsfYsWMgFuKlXhphjdH7USgX
+
+Nivel 30
+git clone ssh://bandit30-git@localhost/home/bandit30-git/repo
+cd repo
+git tag
+git show secret
+Siguiente contraseña: 82NkymblpGBYmIXG6ZQ8YldBYstHpfUf
+
+Nivel 31
+git clone ssh://bandit31-git@localhost/home/bandit31-git/repo
+cd repo
+echo "May I come in?" > key.txt
+git add -f key.txt
+git config user.email "amigo@example.com"
+git config user.name "Tu amigo"
+git commit -m "Submit key"
+git push origin master
+Siguiente contraseña: pWuj5jBQ6IgV0NXwiH6g1pXRF8S1YvbT
+
+Nivel 32
+$0
+cat /etc/bandit_pass/bandit33
+Siguiente contraseña: u4P2CyPOwPGLe94RdD9Uo2FxFwvnFswM
+
+Nivel 33
+ls
+cat README.txt
 
