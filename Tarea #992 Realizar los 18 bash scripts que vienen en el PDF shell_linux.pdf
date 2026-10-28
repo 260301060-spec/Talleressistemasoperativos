@@ -1,1 +1,375 @@
+#1
+
+#!/bin/bash
+# Esto es un comentario
+echo "Hola mundo"
+
+2#
+
+#!/bin/bash
+# En la primera línea se establece con qué shell se debe ejecutar
+# Se define una variable
+SALUDO="Hola mundo"
+
+echo -n "Este script te dice: "
+echo "${SALUDO}"
+
+3#
+
+#!/bin/sh
+# Muestra el uso de variables. No existen los tipos.
+
+una_variable=666
+MI_NOMBRE="Richard"
+NOMBRES="Iñigo Asier Sten Roberto Pello"
+BOOLEANO=true
+
+echo "Echemos un ojo a las variables:"
+echo "Un número: ${una_variable}"
+echo "Un nombre: ${MI_NOMBRE}"
+echo "Un grupo de nombres: ${NOMBRES}"
+
+# Argumentos pasados al script:
+# ${0}: nombre del script, ${1}: primer argumento, ${2}: segundo argumento...
+echo "Has invocado el script pasándome ${0} y ${1}"
+
+# Variables especiales:
+echo "Me has pasado $# argumentos"
+echo "PID: $$ y todos los parámetros: $@"
+
+# Variables de entorno
+echo "Mi directorio actual: ${PWD} y mi usuario: ${UID}"
+
+4#
+
+#!/bin/bash
+# Muestra el uso de arrays
+
+asociaciones[0]="Gruslin"
+asociaciones[1]="Hackresi"
+asociaciones[2]="NavarradotNET"
+asociaciones[3]="Riberlug"
+
+# Otra forma de definirlos
+partidos=("UPN" "PSN" "CDN" "IUN" "Nafarroa BAI" "RCN")
+numeros=(15 23 45 42 23 1337 23 666 69)
+
+echo "${asociaciones[0]} es una asociación, ${partidos[1]} un partido"
+echo "Primer número: ${numeros[0]}"
+
+5#
+
+#!/bin/bash
+# Muestra subcadenas y asignación de valores por defecto
+
+NOMBRE="Navarrux Live edition"
+echo "${NOMBRE} -> una parte: ${NOMBRE:8} y otra: ${NOMBRE:8:4}"
+
+# Valores por defecto (${variable:-valorpordefecto})
+SINVALOR=
+echo "Variable SINVALOR: ${SINVALOR:-31337} y ${VACIO:-'Miguel Indurain'}"
+echo "La variable SINVALOR sigue sin valor: '${SINVALOR}'"
+
+# Asignar valor por defecto si está vacía (${variable:=valorpordefecto})
+echo "Estableciendo valor..."
+echo "Variable SINVALOR: ${SINVALOR:=31337} y ${VACIO:='Miguel Indurain'}"
+echo "Ahora la variable SINVALOR tiene valor: ${SINVALOR}"
+
+# Reemplazar si SÍ tiene valor (${variable:+valorpordefecto})
+PROGRAMA='sniffit'
+echo "Valor alternativo de PROGRAMA: ${PROGRAMA:+'tcpdump'} y el real sigue siendo: ${PROGRAMA}"
+
+# Listar variables por prefijo (${!prefijo*})
+echo "Variables que empiezan con P:"
+for i in ${!P*}; do 
+    echo "$i"
+done
+
+6#
+
+#!/bin/bash
+# Operaciones matemáticas con expr y []
+
+VALOR1=23
+VALOR2=45
+
+RESULTADO=`expr ${VALOR1} + ${VALOR2}`
+echo "Resultado con expr: ${RESULTADO}"
+
+RESULTADO=`expr ${VALOR1} + ${VALOR2} + 3`
+echo "Resultado acumulado: ${RESULTADO}"
+
+VALOR1=5
+VALOR2=4
+echo "Valores: ${VALOR1} y ${VALOR2}"
+
+RESULTADO=$[${VALOR1} + ${VALOR2} + 2]
+echo "Ahora: ${VALOR1} + ${VALOR2} + 2 = ${RESULTADO}"
+
+RESULTADO=$[${VALOR1} + $[${VALOR2} * 3]]
+echo "Ahora: ${VALOR1} + (${VALOR2} * 3) = ${RESULTADO}"
+
+7#
+
+#!/bin/bash
+# Operaciones lógicas y comparaciones
+
+booleano=true
+
+# Si booleano es true se muestra OK
+$booleano && echo "OK" || echo "no es true"
+
+otrobool=false
+test ${otrobool} || echo "Ahora es falso"
+
+# Comparaciones numéricas (-eq, -ne, -lt, -le, -gt, -ge)
+valor=6
+test $valor -le 6 && echo "Se cumple que $valor <= 6"
+
+nuevo=${valor}
+test ${nuevo} -eq ${valor} && echo "Son lo mismo (${nuevo} == ${valor})"
+
+8#
+
+#!/bin/bash
+# Condicionales e interacción con el usuario
+
+VARIABLE_INT=4
+if [ ${VARIABLE_INT} -gt 0 ]; then
+    echo "${VARIABLE_INT} es mayor que 0"
+fi
+
+if [ -e /etc/shadow ]; then
+    echo "OK, parece que tienes un sistema con shadow pass"
+fi
+
+OTRA=-23
+if [ ${OTRA} -lt 0 ]; then
+    echo "${OTRA} es menor que 0"
+else
+    echo "${OTRA} es mayor que 0"
+fi
+
+# Pedir datos al usuario
+echo -n "Mete un valor: "
+read VALOR1
+echo -n "Mete otro valor: "
+read VALOR2
+
+echo "Has introducido los valores ${VALOR1} y ${VALOR2}"
+
+if [ ${VALOR1} -gt ${VALOR2} ]; then
+    echo "${VALOR1} es mayor que ${VALOR2}"
+elif [ ${VALOR1} -lt ${VALOR2} ]; then
+    echo "${VALOR1} es menor que ${VALOR2}"
+else
+    echo "${VALOR1} y ${VALOR2} son iguales"
+fi
+
+# Crear archivo si no existe
+test -f './fichero.txt' || touch fichero.txt
+
+9#
+
+#!/bin/bash
+# Script para comprobar si un fichero existe. Espera un parámetro.
+# Ejemplo de uso: ./script9.sh mi_archivo.txt
+
+if [ -e "$1" ] && [ -f "$1" ]; then
+    echo "OK, el fichero $1 existe"
+else 
+    echo "NO existe el fichero $1"
+fi
+
+# Comprobación mediante negación (!)
+if [ ! -e "$1" ]; then
+    echo "El archivo $1 definitivamente no existe"
+fi
+
+10#
+
+#!/bin/bash
+# Estructura case / switch
+
+NOMBRE=""
+echo -n "Dame un nombre: "
+read NOMBRE
+
+case ${NOMBRE} in
+    iñigo)
+        echo "${NOMBRE} dice: me dedico a Navarrux"
+        ;;
+    sten)
+        echo "${NOMBRE} dice: tengo un blog friki"
+        ;;
+    asier)
+        echo "${NOMBRE} dice: .NET me gusta"
+        ;;
+    pello)
+        echo "${NOMBRE} dice: el shell mola"
+        ;;
+    *)
+        echo "A ${NOMBRE} no lo conozco"
+        ;;
+esac
+
+11#
+
+#!/bin/bash
+# Diferentes formas del bucle for
+
+echo "FOR simple:"
+for i in a b c d e f g h i; do
+    echo "letra: $i"
+done
+
+NOMBRES="Iñigo Sten Asier Pello Roberto"
+echo -e "\nFOR para recorrer una lista/array:"
+echo "Participantes en la 4party:"
+for i in ${NOMBRES}; do
+    echo ${i}
+done
+
+echo -e "\nFOR con ficheros .sh:"
+for i in *.sh; do
+    ls -lh ${i} 2>/dev/null || echo "No hay archivos .sh aquí"
+done
+
+echo -e "\nFOR clásico estilo C:"
+for ((cont=0; cont < 10; cont++)); do
+    echo "Ahora valgo: ${cont}"
+done
+
+
+12#
+
+#!/bin/bash
+# Estructura while
+
+echo "WHILE en marcha"
+cont=0
+
+# Un bucle que terminará cuando $cont sea mayor o igual a 100
+while [ ${cont} -lt 100 ]; do
+    cont=`expr $cont + 10`
+    echo "Valor del contador: ${cont}"
+done
+
+echo "Valor final del contador: ${cont}"
+
+13#
+
+#!/bin/bash
+# Estructura until (se ejecuta hasta que la condición sea VERDADERA)
+
+echo "Estructura until"
+cont=15
+
+until [ ${cont} -lt 0 ]; do
+    cont=`expr $cont - 1`
+    echo "Valor del contador: ${cont}"
+done
+
+echo "Valor final del contador: ${cont}"
+
+14#
+
+#!/bin/bash
+# Estructura select para menús de opción múltiple
+
+echo "Select de distros"
+DISTROS="Debian Ubuntu Navarrux Gentoo Mandriva"
+
+echo "Selecciona la mejor opción por favor:"
+select resultado in ${DISTROS}; do
+    # Si la longitud de la cadena seleccionada es mayor a 0, sale del bucle
+    if [ ${#resultado} -ne 0 ]; then
+        break
+    fi
+    echo "Opción no válida. Selecciona otra opción:"
+done
+
+echo "Sistema seleccionado: [${resultado}] (Longitud de cadena: ${#resultado})"
+
+15#
+
+#!/bin/bash
+# Definición y llamada de funciones
+
+RESULTADO=0
+
+# Función que muestra parámetros
+muestrapantalla () {
+    echo "Valores pasados: \$0=$0 | \$1=$1 | \$2=$2 | \$3=$3"
+}
+
+# Función que realiza una suma
+sumame () {
+    echo "Estamos en la función: ${FUNCNAME}"
+    echo "Parámetros recibidos: $1 y $2"
+    RESULTADO=`expr $1 + $2`
+    return 0
+}
+
+# Llamada a función simple
+muestrapantalla 3 4 "epa"
+
+# Llamada a función con validación de retorno
+sumame 45 67 && echo "Suma realizada con éxito" || echo "Ocurrió un error"
+echo "Resultado global: ${RESULTADO}"
+
+16#
+
+# Archivo: libreria.sh
+muestrapantalla () {
+    echo "Valores: $1, $2, $3"
+}
+
+sumame () {
+    RESULTADO=`expr $1 + $2`
+    return 0
+}
+
+17#
+
+#!/bin/bash
+# Atrapando señales del sistema (Ctrl+C, Ctrl+Z, etc.)
+
+funcion () {
+    echo -e "\n¡Se ha recibido una señal! Ejecutando handler..."
+}
+
+# Atrapa INT (Ctrl+C), QUIT (Ctrl+\) y TSTP (Ctrl+Z)
+trap "funcion" INT QUIT TSTP
+
+echo "Bucle infinito iniciado. Presiona Ctrl+C o Ctrl+Z para probar el trap."
+echo "Para matar este script usa 'kill -9 $$' desde otra terminal."
+
+while true; do
+    sleep 2
+    echo "ufff qué sueño..."
+done
+
+18#
+
+#!/bin/bash
+# Colores en la terminal con códigos ANSI y "echo -e"
+
+echo -e "\033[40m\033[37m Blanco \033[0m"
+echo -e "\033[40m\033[1;37m Gris claro \033[0m"
+echo -e "\033[40m\033[30m Negro \033[0m (esto es texto negro)"
+echo -e "\033[40m\033[1;30m Gris \033[0m"
+echo -e "\033[40m\033[31m Rojo \033[0m"
+echo -e "\033[40m\033[1;31m Rojo claro \033[0m"
+echo -e "\033[40m\033[32m Verde \033[0m"
+echo -e "\033[40m\033[1;32m Verde claro \033[0m"
+echo -e "\033[40m\033[33m Marrón \033[0m"
+echo -e "\033[40m\033[1;33m Amarillo \033[0m"
+echo -e "\033[40m\033[34m Azul \033[0m"
+echo -e "\033[40m\033[1;34m Azul claro \033[0m"
+echo -e "\033[40m\033[35m Púrpura"
+echo -e "\033[40m\033[1;36m Cyan claro \033[0m"
+# Ejemplos con fondo de diferente color y subrayado:
+echo -e "\033[42m\033[31m Navarrux v1.0 \033[0m"
+echo -e "\033[40m\033[4;33m Amarillo subrayado \033[0m"
 
