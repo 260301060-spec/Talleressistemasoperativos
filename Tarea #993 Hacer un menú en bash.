@@ -1,1 +1,48 @@
+#!/bin/bash
+
+# ============================================
+#        MENÚ PRINCIPAL
+# ============================================
+
+while true
+do
+    clear
+    echo "================================"
+    echo "       MENÚ PRINCIPAL"
+    echo "================================"
+    echo "  1) Mostrar fecha y hora"
+    echo "  2) Listar archivos"
+    echo "  3) Abrir el editor"
+    echo "  4) Ver uso de disco"
+    echo "  0) Salir"
+    echo "================================"
+    read -p "  Elige una opción: " opcion
+
+    case $opcion in
+        1)
+            echo -e "\n  Fecha: $(date)"
+            echo "  Hora:  $(date +%H:%M:%S)"
+            ;;
+        2)
+            echo -e "\n  Archivos en $(pwd):"
+            ls -la
+            ;;
+        3)
+            nano
+            ;;
+        4)
+            echo -e "\n  Uso de disco:"
+            df -h
+            ;;
+        0)
+            echo -e "\n  ¡Adiós!\n"
+            break
+            ;;
+        *)
+            echo -e "\n  ⚠ Opción inválida.\n"
+            ;;
+    esac
+
+    read -p "  Presiona Enter para continuar..."
+done   
 
